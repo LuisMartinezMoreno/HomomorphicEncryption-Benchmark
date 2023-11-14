@@ -1,8 +1,8 @@
 import numpy as np
 import archiveUtils
 from EncryptionAlgorithms.PartiallyHE import elGamal, paillier, RSA
-from EncryptionAlgorithms.SomeWhatHE import BGV
-from EncryptionAlgorithms.FullyHE.CKKS import CKKSEncoder
+from EncryptionAlgorithms.SomeWhatHE import BGV, CKKS
+from EncryptionAlgorithms.FullyHE import CKKStest
 
 def main(printing:bool):
     resultASCII,result = archiveUtils.returnArchiveASCII("Files/1paragraph")
@@ -11,7 +11,7 @@ def main(printing:bool):
     print("---- result -------")
     print(result)'''
     print("------- Partially homomorphic encryption -------")
-    
+
     '''
     resultPaillierEnc,resultPaillierDec = paillier.execute(resultPaillier)
     print(resultPaillierDec)
@@ -24,10 +24,8 @@ def main(printing:bool):
     
     #resultBGVEnc, resultBGVDec = BGV.execute(resultASCII)
 
-    #resultCKKSEnc, resultCKKSDec = CKKS.execute(resultASCII, True)
+    #resultCKKSEnc, resultCKKSdec, resultSimilarity = CKKS.execute(resultASCII, True)
 
-    CKKSEncoder.execute(np.array(resultASCII), True)
-    #CKKS.execute(resultASCII, True)
 
 if __name__ == "__main__":
     main(True)
