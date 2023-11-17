@@ -9,4 +9,3 @@ def checkSimilarity(message, decoded, threshold):
                 return("it is not similar")
     media =  sum(similarityRate) / len(similarityRate)
     return media
-    

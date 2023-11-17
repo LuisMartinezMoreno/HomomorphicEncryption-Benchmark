@@ -13,20 +13,21 @@ from tests.helper import check_complex_vector_approx_eq
 from util.plaintext import Plaintext
 import util.matrix_operations as mat
 from util.random_sample import sample_random_complex_vector
-from . import similarityRate
+import similarityRate
 
 def execute(message, printing:bool):
-    poly_degree = closestPow(len(message))[-2]
+    num_slots = len(message)
+    poly_degree = closestPow(num_slots)
     max_size = poly_degree//2
+    vec = sample_random_complex_vector(max_size)
     ciph_modulus = 1 << 600
     big_modulus = 1 << 1200
     scaling_factor = 1 << 30
-    degree = 16
     ciph_modulus = 1 << 600
     big_modulus = 1 << 1200
     scaling_factor = 1 << 30
 
-    params = CKKSParameters(poly_degree=degree,
+    params = CKKSParameters(poly_degree=poly_degree,
                                 ciph_modulus=ciph_modulus,
                                 big_modulus=big_modulus,
                                 scaling_factor=scaling_factor)
@@ -38,8 +39,8 @@ def execute(message, printing:bool):
     encryptor = CKKSEncryptor(params, public_key, secret_key)
     decryptor = CKKSDecryptor(params, secret_key)
     evaluator = CKKSEvaluator(params)
-
-    dividedMessage = [message[i:i+max_size] for i in range(0, len(message), max_size)]
+    while(len(message)<max_size):
+        message.append(0)
 
     num_slots = len(message)
     plain = encoder.encode(message, scaling_factor)
@@ -52,6 +53,8 @@ def execute(message, printing:bool):
         rot_keys[i] = key_generator.generate_rot_key(i)
 
     conj_key = key_generator.generate_conj_key()
+    
+
 
     ciph1, ciph2 = evaluator.coeff_to_slot(ciph, rot_keys, conj_key, encoder)
     decrypted_1 = decryptor.decrypt(ciph1)
@@ -69,5 +72,5 @@ def closestPow(number):
     while pow <= number:
         pows.append(pow)
         pow *= 2
-
-    return pows[:-1]
+    result = pows[-1]*2*2
+    return result

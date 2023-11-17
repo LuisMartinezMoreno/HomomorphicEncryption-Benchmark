@@ -1,1 +1,0 @@
-#Gentry's Fully Homomorphic Encryption Scheme (Gentry FHE)
