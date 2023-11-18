@@ -1,4 +1,4 @@
 Arreglar CKKS
 arreglar benaloh
-borrar GM
+borrar GM y main.py
 mirr si borrar CKKSTest
