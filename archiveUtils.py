@@ -10,13 +10,15 @@ def read_text_file(fileName):
 
 def returnArchiveASCII(fileName):
     lines = read_text_file(fileName)
+    archiveASCII = []
     archive = []
     if lines:
         for i, line in enumerate(lines, 1):
             for char in line:
                 unicodeValue = ord(char)
-                archive.append(unicodeValue)
-    return archive, lines
+                archiveASCII.append(unicodeValue)
+                archive.append(char)
+    return archiveASCII, archive
 
 def retrieveValuesFromASCII(result):
     deASCIIedResult = []

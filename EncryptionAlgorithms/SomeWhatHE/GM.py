@@ -1,7 +1,6 @@
 import random
 import math
 import time
-
 import sympy
 
 
@@ -122,7 +121,6 @@ def execute(result, printing:bool):
     for i in result:
         sum += i
         randoms*=(random.randint(0, n))
-    print(sum)
 
     '''firstHalf = result[:len(result)//2]
     u1 = random.randint(0, n)

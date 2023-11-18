@@ -1,7 +1,7 @@
 import numpy as np
 import archiveUtils
 from EncryptionAlgorithms.PartiallyHE import elGamal, paillier, RSA
-from EncryptionAlgorithms.SomeWhatHE import BGV, GM
+from EncryptionAlgorithms.SomeWhatHE import GM, benaloh
 from EncryptionAlgorithms.FullyHE import CKKS_Bootstrapping, BFV
 
 def main(printing:bool):
@@ -10,7 +10,7 @@ def main(printing:bool):
     print(resultASCII)
     print("---- result -------")
     print(result)'''
-    print("------- Partially homomorphic encryption -------")
+    #print("------- Partially homomorphic encryption -------")
 
     
     #resultPaillierEnc,resultPaillierDec = paillier.execute(resultASCII,True)
@@ -27,7 +27,9 @@ def main(printing:bool):
     
     #BFV.execute(resultASCII,True)
     #testGM = [123,345]
-    GM.execute(resultASCII, True)
+    #GM.execute(resultASCII, True)
+    #CKKS_Bootstrapping.execute(resultASCII, printing)
+    benaloh.execute()
 
 if __name__ == "__main__":
     main(True)
