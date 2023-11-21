@@ -35,15 +35,44 @@ def plotData(data, overallLength, algorithm):
 
 
 def severalPlots(y, plots, names, title):
+    """
+    Plot multiple curves on a single graph.
+
+    Parameters:
+    - y (array-like): The y-values to be plotted on the vertical axis.
+    - plots (list of array-like): List containing arrays of x-values for each curve to be plotted.
+    - names (list of str): List containing labels for each curve to be plotted.
+    - title (str): Title of the plot.
+
+    Returns:
+    None
+
+    Example:
+    severalPlots(y_values, [x_values1, x_values2], ['Curve 1', 'Curve 2'], 'Multiple Curves Plot')
+    """
+    # Create a new figure
     fig = plt.figure()
     fig.clf()
-    ax = fig.subplots(1,1)
-    for i in range(0, len(plots)):
-        ax.plot(plots[i], y, names[i])
+
+    # Create a subplot with one row and one column
+    ax = fig.subplots(1, 1)
+
+    # Plot each curve with corresponding x-values and labels
+    for i in range(len(plots)):
+        ax.plot(plots[i], y, label=names[i])
+
+    # Set x and y axis labels
     ax.set_xlabel('x - time spent')
     ax.set_ylabel('y - text length')
 
+    # Display the legend to distinguish between curves
     ax.legend()
+
+    # Adjust layout to prevent clipping of labels
     fig.tight_layout()
-    fig.title(title)
-    fig.show()            
+
+    # Set the title of the plot
+    fig.suptitle(title)
+
+    # Display the plot
+    fig.show()
