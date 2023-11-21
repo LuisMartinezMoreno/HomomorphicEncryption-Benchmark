@@ -24,7 +24,6 @@ def execute(message, printing: bool):
     num_slots = len(message)
     poly_degree = closestPow(num_slots)
     max_size = poly_degree // 2
-    vec = sample_random_complex_vector(max_size)
     ciph_modulus = 1 << 600
     big_modulus = 1 << 1200
     scaling_factor = 1 << 30
@@ -83,13 +82,15 @@ def execute(message, printing: bool):
     print(elapsed_timeDec)
 
     # Check similarity between decrypted values and original message
-    result1 = check_complex_vector_approx_eq(plain_ans1, decrypted_1, error=0.01)
+    result1 = check_complex_vector_approx_eq(plain_ans1, decrypted_1, error=0.0001)
     result2 = check_complex_vector_approx_eq(plain_ans2, decrypted_2, error=0.01)
     if printing:
+        print("============= FHE algorithm =============")
         print("========= CKKS Bootstrapping first half decryption similarity =============")
         print(result1)
         print("========= CKKS Bootstrapping second half decryption similarity=============")
         print(result2)
+    return elapsed_timeEnc, elapsed_timeDec
 
 def closestPow(number):
     """

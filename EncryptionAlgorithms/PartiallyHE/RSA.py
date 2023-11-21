@@ -113,9 +113,10 @@ def execute(result, printing: bool):
     removeFiles()
 
     if printing:
+        print("============ PHE algorithm ================")
         print("========= encrypted RSA value =============")
         print(resultRSA)
         print("========= decrypted RSA value=============")
         print(resultRSADec)
 
-    return resultRSA, resultRSADec
+    return elapsed_timeEnc, elapsed_timeDec

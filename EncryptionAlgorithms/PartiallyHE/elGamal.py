@@ -144,9 +144,10 @@ def execute(result, printing: bool):
     print(elapsed_timeDec)
 
     if printing:
+        print("============ PHE algorithm ================")
         print("========= encrypted ElGamal value =============")
         print(elGamalResult)
         print("========= decrypted ElGamal value=============")
         print(elGamalResultDec)
 
-    return elGamalResult, elGamalResultDec
+    return elapsed_timeEnc, elapsed_timeDec

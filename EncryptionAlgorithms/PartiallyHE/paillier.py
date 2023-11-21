@@ -82,10 +82,11 @@ def execute(result, printing: bool):
 
     # If 'printing' is True, print the encrypted and decrypted values
     if printing:
+        print("============ PHE algorithm ================")
         print("========= encrypted paillier value =============")
         print(resultPaillier)
         print("========= decrypted paillier value=============")
         print(resultPaillierDec)
 
     # Return the encrypted result and the decrypted result
-    return resultPaillier, resultPaillierDec
+    return elapsed_timeEnc, elapsed_timeDec

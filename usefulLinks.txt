@@ -1,5 +1,13 @@
+---- USEFUL LINKS -----
+These are some of the places that have been helpful in the implementation task.
+Some may be used to write the paper
+
 https://www.ayoub-benaissa.com/blog/introduction-to-homomorphic-encryption/
 https://blog.openmined.org/build-an-homomorphic-encryption-scheme-from-scratch-with-python/
 https://www.techtarget.com/searchsecurity/definition/homomorphic-encryption#:~:text=Homomorphic%20encryption%20is%20the%20conversion,data%20without%20compromising%20the%20encryption.
 https://sefiks.com/2023/03/27/a-step-by-step-partially-homomorphic-encryption-example-with-elgamal-in-python/
 https://github.com/sarojaerabelli/py-fhe/tree/master
+https://sefiks.com/2023/10/06/a-step-by-step-partially-homomorphic-encryption-example-with-benaloh-in-python-from-scratch/
+https://github.com/hrome13/Cryptography/blob/main/cryptosystems.ipynb
+https://sefiks.com/2023/10/27/a-step-by-step-partially-homomorphic-encryption-example-with-goldwasser-micali-in-python/
+https://lockpin010.medium.com/schmidt-samoa-encryption-b29067d96e2d

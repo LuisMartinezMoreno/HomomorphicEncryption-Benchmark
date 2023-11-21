@@ -1,4 +1,6 @@
 phe==1.5.0
 pycryptodome==3.18.0
 numpy==1.26.2
+multiprocess==0.70.15
 git+https://github.com/sarojaerabelli/py-fhe.git
+matplotlib==3.8.2
