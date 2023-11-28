@@ -16,7 +16,11 @@ def plotData(data, overallLength, algorithm):
     Example:
     >>> plotData([1, 2, 3], [10, 15, 20], "Algorithm A")
     """
-    # plotting the points
+    print(algorithm)
+    print(data)
+    print(overallLength)
+    
+    '''# plotting the points
     plt.plot(data, overallLength)
 
     # naming the x axis
@@ -31,10 +35,10 @@ def plotData(data, overallLength, algorithm):
     plt.show()
 
     # store the plot
-    plt.savefig("plots/"+algorithm+'.png')
+    plt.savefig("plots/"+algorithm+'.png')'''
 
 
-def severalPlots(y, plots, names, title):
+'''def severalPlots(y, plots, names, title):
     """
     Plot multiple curves on a single graph.
 
@@ -75,4 +79,4 @@ def severalPlots(y, plots, names, title):
     fig.suptitle(title)
 
     # Display the plot
-    fig.show()
+    fig.show()'''
