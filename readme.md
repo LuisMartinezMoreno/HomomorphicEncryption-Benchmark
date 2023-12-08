@@ -13,4 +13,4 @@ It is measured the time expent and the performance in terms of security and reli
 
 
 ## Keywords
-[SSdeep],[Nilsimsa],[TLSH],[Python],[fuzzyhashing]
+[HomomorphicEncryption],[RSA],[elGamal],[Python],[BFV],[CKKS],[Bootstrapping],[benaloh],[paillier],[RSA]
